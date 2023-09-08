@@ -13,12 +13,29 @@
 <body>
     <div class="container">
         <h2>Photo Swiper</h2>
+        <div id="smallGallery">
+            <div class="smallItem" style="background-image: url('/images/image8.jpg');">
+                <div class="smallCounter">
+                    <div class="imageFont">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+                    <span class="imageNumber">8</span>
+                </div>
+            </div>
+        </div>
         <div id="openGallery" class="gridContainer">
               <div class="gridItem spanItem" style="background-image: url('/images/image1.jpg');"></div>
               <div class="gridItem" style="background-image: url('/images/image2.jpg');"></div>
               <div class="gridItem" style="background-image: url('/images/image3.jpg');"></div>
-              <div class="gridItem" style="background-image: url('/images/image1.jpg');"></div>
-              <div class="gridItem" style="background-image: url('/images/image2.jpg');"></div>
+              <div class="gridItem" style="background-image: url('/images/image4.jpg');"></div>
+              <div class="gridItem lastItem" style="background-image: url('/images/image5.jpg');">
+                <div class="imageCounter">
+                    <div class="imageFont">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+                    <span class="imageNumber">8</span>
+                </div>
+              </div>
         </div>
     </div>
 
@@ -77,6 +94,31 @@
                     w: 1440,
                     h: 1024
                 },
+                {
+                    src: '/images/image4.jpg',
+                    w: 1240,
+                    h: 1224
+                },
+                {
+                    src: '/images/image5.jpg',
+                    w: 1440,
+                    h: 1024
+                },
+                {
+                    src: '/images/image6.jpg',
+                    w: 1140,
+                    h: 1324
+                },
+                {
+                    src: '/images/image7.jpg',
+                    w: 1440,
+                    h: 1024
+                },
+                {
+                    src: '/images/image8.jpg',
+                    w: 1140,
+                    h: 1324
+                },
             ];
 
             var options = {
@@ -94,9 +136,10 @@
         };
             openPhotoSwipe();
             document.getElementById('openGallery').onclick = openPhotoSwipe;
+            document.getElementById('smallGallery').onclick = openPhotoSwipe;
     </script>
 
-
+    <script src="https://kit.fontawesome.com/4a2791f862.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
