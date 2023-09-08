@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"></script>
     <title>SwipePhoto</title>
 </head>
 <body>
@@ -73,7 +71,10 @@
 
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"></script>
     <script>
+
         var openPhotoSwipe = function () {
             var pswpElement  = document.querySelectorAll('.pswp')[0];
 
@@ -134,12 +135,20 @@
             gallery.init();
 
         };
-            openPhotoSwipe();
-            document.getElementById('openGallery').onclick = openPhotoSwipe;
-            document.getElementById('smallGallery').onclick = openPhotoSwipe;
+        openPhotoSwipe();
+        
+
+        
+        const openGallery = document.getElementById('openGallery');
+        const smallGallery = document.getElementById('smallGallery');
+        
+        
+        openGallery.onclick = openPhotoSwipe;
+        smallGallery.onclick = openPhotoSwipe;
+        
     </script>
 
     <script src="https://kit.fontawesome.com/4a2791f862.js" crossorigin="anonymous"></script>
-
+    
 </body>
 </html>
