@@ -4,38 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css">
-    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css">
     <title>SwipePhoto</title>
 </head>
 <body>
-    <div class="container">
-        <h2>Photo Swiper</h2>
-        <div id="smallGallery">
-            <div class="smallItem" style="background-image: url('/images/image8.jpg');">
-                <div class="smallCounter">
-                    <div class="imageFont">
-                        <i class="fa-solid fa-image"></i>
-                    </div>
-                    <span class="imageNumber">8</span>
-                </div>
-            </div>
+    <div class="flex flex-wrap" id="openGallery">
+        <div class="flex flex-wrap md:w-1/2">
+          <div class="w-full p-1">
+            <img alt="gallery" class="block h-auto w-full rounded-lg object-cover object-center md:rounded-l-lg md:rounded-r-none" src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp" />
+          </div>
         </div>
-        <div id="openGallery" class="gridContainer">
-              <div class="gridItem spanItem" style="background-image: url('/images/image1.jpg');"></div>
-              <div class="gridItem" style="background-image: url('/images/image2.jpg');"></div>
-              <div class="gridItem" style="background-image: url('/images/image3.jpg');"></div>
-              <div class="gridItem" style="background-image: url('/images/image4.jpg');"></div>
-              <div class="gridItem lastItem" style="background-image: url('/images/image5.jpg');">
-                <div class="imageCounter">
-                    <div class="imageFont">
-                        <i class="fa-solid fa-image"></i>
-                    </div>
-                    <span class="imageNumber">8</span>
-                </div>
-              </div>
+        <div class="hidden w-1/2 flex-wrap md:flex">
+          <div class="w-1/2 p-1">
+            <img alt="gallery" class="block h-auto w-full object-cover object-center" src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp" />
+          </div>
+          <div class="w-1/2 p-1">
+            <img alt="gallery" class="block h-auto w-full object-cover object-center md:rounded-tr-lg" src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp" />
+          </div>
+          <div class="w-1/2 p-1">
+            <img alt="gallery" class="block h-auto w-full object-cover object-center" src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(77).webp" />
+          </div>
+          <div class="w-1/2 p-1">
+            <img alt="gallery" class="block h-auto w-full object-cover object-center md:rounded-br-lg" src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp" />
+          </div>
         </div>
-    </div>
+      </div>
 
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="pswp__bg"></div>
@@ -81,44 +74,29 @@
 
             var items = [
                 {
-                    src: '/images/image1.jpg',
+                    src: 'https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp',
                     w: 1440,
                     h: 1024
                 },
                 {
-                    src: '/images/image2.jpg',
+                    src: 'https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp',
                     w: 1440,
                     h: 1024
                 },
                 {
-                    src: '/images/image3.jpg',
+                    src: 'https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(77).webp',
                     w: 1440,
                     h: 1024
                 },
                 {
-                    src: '/images/image4.jpg',
-                    w: 1240,
-                    h: 1224
-                },
-                {
-                    src: '/images/image5.jpg',
+                    src: 'https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp',
                     w: 1440,
                     h: 1024
                 },
                 {
-                    src: '/images/image6.jpg',
-                    w: 1140,
-                    h: 1324
-                },
-                {
-                    src: '/images/image7.jpg',
+                    src: 'https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp',
                     w: 1440,
                     h: 1024
-                },
-                {
-                    src: '/images/image8.jpg',
-                    w: 1140,
-                    h: 1324
                 },
             ];
 
@@ -145,7 +123,7 @@
         smallGallery.onclick = openPhotoSwipe;
         
     </script>
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/4a2791f862.js" crossorigin="anonymous"></script>
     
 </body>
