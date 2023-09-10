@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ partial "head.html" }}
+</head>
+<body>
+    <div>
+        <!-- HEADER partial goes here -->
+    </div>
+    <main>
+        {{ block "main" .}}{{ end }}
+    </main>
+    <div>
+        <!-- FOOTER partial here -->
+    </div>
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
