@@ -1,3 +1,175 @@
 {{ define "main"}}
-  {{ partial "gallery.html" }}
+{{ with .Params.cover_images }}
+{{ if .enable }}
+<div class="flex flex-wrap" id="openGallery">
+  <div class="flex flex-wrap md:w-1/2">
+    <div class="w-full p-1">
+      <img
+        alt="gallery"
+        class="block h-auto w-full rounded-lg object-cover object-center md:rounded-l-lg md:rounded-r-none"
+        src="{{ .image1 }}"
+      />
+    </div>
+  </div>
+  <div class="hidden w-1/2 flex-wrap md:flex">
+    <div class="w-1/2 p-1">
+      <picture>
+        <img
+          alt="gallery"
+          class="block h-auto w-full object-cover object-center"
+          src="{{ .image2 }}"
+        />
+      </picture>
+    </div>
+    <div class="w-1/2 p-1">
+      <picture>
+        <img
+          alt="gallery"
+          class="block h-auto w-full object-cover object-center md:rounded-tr-lg"
+          src="{{ .image3 }}"
+        />
+      </picture>
+    </div>
+    <div class="w-1/2 p-1">
+      <picture>
+        <img
+          alt="gallery"
+          class="block h-auto w-full object-cover object-center"
+          src="{{ .image4 }}"
+        />
+      </picture>
+    </div>
+    <div class="w-1/2 p-1">
+      <picture>
+        <img
+          alt="gallery"
+          class="block h-auto w-full object-cover object-center md:rounded-br-lg"
+          src="{{ .image5 }}"
+        />
+      </picture>
+    </div>
+  </div>
+</div>
 {{ end }}
+{{ end }}
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="pswp__bg"></div>
+  <div class="pswp__scroll-wrap">
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <div class="pswp__counter"></div>
+        <button
+          class="pswp__button pswp__button--close"
+          title="close(Esc)"
+        ></button>
+        <button
+          class="pswp__button pswp__button--fs"
+          title="Toogle fullscreen"
+        ></button>
+        <button
+          class="pswp__button pswp__button--zoom"
+          title="Zoom in/out"
+        ></button>
+        <div class="pswp__preloader">
+          <div class="pswp__preleader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="pswp__button pswp__button--arrow--left"
+        title="Previous(arrow left)"
+      ></button>
+      <button
+        class="pswp__button pswp__button--arrow--right"
+        title="Next(arrow right)"
+      ></button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ with .Params.gallery_images}}
+{{if .enable}}
+<script>
+  var openPhotoSwipe = function () {
+    var pswpElement = document.querySelectorAll(".pswp")[0];
+
+    var items = [
+      {
+        src: "{{ .image1 }}",
+        w: 1440,
+        h: 1024,
+      },
+      {
+        src: "{{ .image2 }}",
+        w: 1440,
+        h: 1024,
+      },
+      {
+        src: "{{ .image3 }}",
+        w: 1440,
+        h: 1024,
+      },
+      {
+        src: "{{ .image4 }}",
+        w: 1440,
+        h: 1024,
+      },
+      {
+        src: "{{ .image5 }}",
+        w: 1440,
+        h: 1024,
+      },
+      {
+        src: "{{ .image6 }}",
+        w: 1440,
+        h: 1024,
+      },
+      {
+        src: "{{ .image7 }}",
+        w: 1440,
+        h: 1024,
+      },
+      {
+        src: "{{ .image8 }}",
+        w: 1440,
+        h: 1024,
+      },
+    ];
+
+    var options = {
+      history: false,
+      focus: false,
+
+      showAnimationDuration: 0,
+      hideAnimationDuration: 0,
+    };
+
+    var gallery = new PhotoSwipe(
+      pswpElement,
+      PhotoSwipeUI_Default,
+      items,
+      options
+    );
+    gallery.init();
+  };
+
+  const openGallery = document.getElementById("openGallery");
+  const smallGallery = document.getElementById("smallGallery");
+
+  openGallery.onclick = openPhotoSwipe;
+  smallGallery.onclick = openPhotoSwipe;
+</script>
+{{ end }}
+{{ end }} {{ end }}
